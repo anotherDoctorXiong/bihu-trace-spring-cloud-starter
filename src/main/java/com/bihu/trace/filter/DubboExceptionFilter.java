@@ -43,8 +43,10 @@ public class DubboExceptionFilter implements Filter {
                 if (CommonResponse.class.isAssignableFrom(method.getReturnType())) {
                     CommonResponse<Object> response = CommonResponse.error(ServerCode.SERVER_ERROR, msg);
                     response.setTraceId(MDC.get(TraceConstants.TRACE_LOG_MDC_KEY));
-                    result.setValue(response);
-                    return result;
+
+                    AsyncRpcResult rpcResult = AsyncRpcResult.newDefaultAsyncResult(invocation);
+                    rpcResult.setValue(response);
+                    return rpcResult;
                 }
                 log.info("method返回类型不是 CommonResponse | method: {}, type: {}", method.getName(),
                     method.getReturnType().getName());
