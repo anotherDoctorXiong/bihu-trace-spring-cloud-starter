@@ -6,7 +6,7 @@
 
   <groupId>com.bihu</groupId>
   <artifactId>bihu-trace-spring-cloud-starter</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 
   <properties>
     <!-- project start-->
@@ -16,6 +16,7 @@
     <!-- project end-->
     <springboot.version>2.1.13.RELEASE</springboot.version>
     <dubbo.version>2.7.8</dubbo.version>
+    <bihu-common-base.version>1.0.2</bihu-common-base.version>
 
   </properties>
 
@@ -58,6 +59,11 @@
       <groupId>org.apache.dubbo</groupId>
       <artifactId>dubbo</artifactId>
       <version>${dubbo.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.bihu</groupId>
+      <artifactId>bihu-common-base</artifactId>
+      <version>${bihu-common-base.version}</version>
     </dependency>
   </dependencies>
 
