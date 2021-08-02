@@ -1,0 +1,2 @@
+consumerTraceIdFilter=com.bihu.trace.filter.DubboConsumerTraceIDFilter
+providerTraceIdFilter=com.bihu.trace.filter.DubboProviderTraceIDFilter
